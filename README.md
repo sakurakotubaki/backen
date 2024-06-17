@@ -144,3 +144,75 @@ npm i class-validator class-transformer
 ```bash
 docker exec -it postgres psql -U udemy_user udemydb
 ```
+
+[prisma](https://www.prisma.io/docs/getting-started/quickstart)
+
+install prisma:
+```bash
+npm install prisma --save-dev
+```
+
+init:
+```bash
+npx prisma init
+```
+
+create model:
+```ts
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// create model
+model Task {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(255)
+  dueDate String @db.VarChar(10)
+  status Status @default(NOT_STARTED)
+  description String?
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  upteatedAt DateTime @updatedAt @db.Timestamp(0)
+}
+
+enum Status {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+```
+
+migration:
+```bash
+npx prisma migrate dev --name init
+```
+
+prisma studio:
+```bash
+npx prisma studio
+```
+
+[Prisma Client](https://docs.nestjs.com/recipes/prisma)
+
+```bash
+npm install @prisma/client
+```
+
+create service:
+```bash
+nest g module prisma
+```
+
+```bash
+nest g service prisma --no-spec
+```
