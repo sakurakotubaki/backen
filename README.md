@@ -138,3 +138,9 @@ install package:
 ```bash
 npm i class-validator class-transformer
 ```
+
+## db start
+
+```bash
+docker exec -it postgres psql -U udemy_user udemydb
+```
