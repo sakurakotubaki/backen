@@ -141,8 +141,24 @@ npm i class-validator class-transformer
 
 ## db start
 
+Dockerを起動するコマンド:
+```bash
+docker-compose up -d
+```
+
 ```bash
 docker exec -it postgres psql -U udemy_user udemydb
+```
+
+すでに作っていて、エラーが出た時の対処方法：
+```bash
+docker stop postgres
+docker rm postgres
+```
+
+コンテナを再起動する
+```bash
+docker-compose up -d
 ```
 
 [prisma](https://www.prisma.io/docs/getting-started/quickstart)
