@@ -216,3 +216,39 @@ nest g module prisma
 ```bash
 nest g service prisma --no-spec
 ```
+
+## GraphQL Query & Mutation
+
+query:
+```
+query {
+  getTasks {
+    id
+    name
+    dueDate
+    description
+    createdAt
+    updatedAt
+  }
+}
+```
+
+mutation input:
+```
+mutation {
+  createTask(createTaskInput: {name: "料理を作る", dueDate: "2024-01-01", description: "ズッキーニのサラダ"}) {
+    id
+    name
+    dueDate
+    status
+    description
+    createdAt
+    updatedAt
+  }
+}
+```
+
+mutation update:
+```
+
+```
