@@ -9,7 +9,7 @@ CREATE TABLE "Task" (
     "status" "Status" NOT NULL DEFAULT 'NOT_STARTED',
     "description" TEXT,
     "createdAt" TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "upteatedAt" TIMESTAMP(0) NOT NULL,
+    "updatedAt" TIMESTAMP(0) NOT NULL,
 
     CONSTRAINT "Task_pkey" PRIMARY KEY ("id")
 );

@@ -21,7 +21,7 @@ model Task {
   status Status @default(NOT_STARTED)
   description String?
   createdAt DateTime @default(now()) @db.Timestamp(0)
-  upteatedAt DateTime @updatedAt @db.Timestamp(0)
+  updatedAt DateTime @updatedAt @db.Timestamp(0)
 }
 
 enum Status {
