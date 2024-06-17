@@ -268,3 +268,49 @@ mutation update:
 ```
 npx prisma migrate dev --name addUser
 ```
+
+## crate user model
+
+add module:
+```bash
+nest g module user
+```
+
+add resolver:
+```bash
+nest g resolver user --no-spec
+```
+
+add service:
+```bash
+nest g service user --no-spec
+```
+
+add bcrypt
+```bash
+npm install bcrypt @types/bcrypt
+```
+
+mutation create user:
+```
+mutation CreateUser($createUserInput: CreateUserInput!) {
+  createUser(createUserInput: $createUserInput) {
+    id
+    name
+    email
+    createdAt
+    updatedAt
+  }
+}
+```
+
+QUERY VARIABLES:
+```
+{
+  "createUserInput": {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "securepassword"
+  }
+}
+```
