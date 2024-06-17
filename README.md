@@ -266,5 +266,5 @@ mutation {
 
 mutation update:
 ```
-
+npx prisma migrate dev --name addUser
 ```
