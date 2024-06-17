@@ -133,3 +133,8 @@ export class TaskService {
   }
 }
 ```
+
+install package:
+```bash
+npm i class-validator class-transformer
+```
