@@ -332,3 +332,44 @@ QUERY VARIABLES:
   "email": "john.doe@example.com"
 }
 ```
+
+## add auth package
+
+```bash
+nest g module auth
+```
+
+add resolver:
+```bash
+nest g resolver auth --no-spec
+```
+
+add service:
+```bash
+nest g service auth --no-spec
+```
+
+add package:
+```bash
+npm i @nestjs/passport passport passport-local
+```
+
+passport type
+```bash
+npm i --save-dev @types/passport-local
+```
+
+add jwt:
+```bash
+npm i @nestjs/jwt passport-jwt
+```
+
+type jwt:
+```bash
+npm i --save-dev @types/passport-jwt
+```
+
+.envにJWT_SECRETを追加
+```
+JWT_SECRET="jwt@secret#key"
+```
