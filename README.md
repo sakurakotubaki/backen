@@ -314,3 +314,21 @@ QUERY VARIABLES:
   }
 }
 ```
+
+GraphQL Query:
+```
+query getUser($email: String!) {
+  getUser(email: $email) {
+    id
+    name
+    email
+  }
+}
+```
+
+QUERY VARIABLES:
+```
+{
+  "email": "john.doe@example.com"
+}
+```

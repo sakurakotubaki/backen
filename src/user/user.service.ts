@@ -6,18 +6,24 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
-  constructor(private readonly prsimaService: PrismaService) {}
+  constructor(private readonly prismaService: PrismaService) {}
 
   async createUserInput(createUserInput: CreateUserInput): Promise<User> {
     const { name, email, password } = createUserInput;
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    return this.prsimaService.user.create({
+    return this.prismaService.user.create({
       data: {
         name,
         email,
         password: hashedPassword,
       },
+    });
+  }
+
+  async getUser(email: string): Promise<User> {
+    return await this.prismaService.user.findUnique({
+      where: { email },
     });
   }
 }
